@@ -9,7 +9,7 @@ class Scoreboard(Turtle):
         self.pu()
         self.setpos(0,Y/2.2)
         self.ht()
-        self.write(f"Score: 0   High Score: {self.hs}",align="center",font=("arial",18,"bold"))
+        self.write(f"Press any keys to start",align="center",font=("arial",18,"bold"))
         try:
            with open('highscore.txt','rt') as f :
                self.hs = int(f.read())
@@ -32,8 +32,8 @@ class Scoreboard(Turtle):
     
     def over(self):
         self.home()
-        self.write(f"GAME OVER!\nYour score was: {self.score}",align="center",font=("arial",30,"bold"))
-        self.setpos(0,0-25)
+        self.write(f"    GAME  OVER!\nYour score was: {self.score}",align="center",font=("arial",30,"bold"))
+        self.setpos(0,0-30)
         self.ht()
         self.write("\nPress Space to Restart",align="center",font=("courier",15))
             
@@ -41,7 +41,7 @@ class Scoreboard(Turtle):
     def restart(self,Y):
         self.clear()
         self.score = 0
-        self.setpos(0-70,Y/2.2)
+        self.setpos(0,Y/2.2)
         self.ht()
         score_text= f"Score: {self.score}   High Score: {self.hs}"
         self.write(score_text,align="center",font=("arial",18,"bold"))
